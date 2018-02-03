@@ -218,8 +218,16 @@ def custom_reverse(input_list):
         True
 
     """
+    half_way = custom_len(input_list) // 2
 
-    pass
+
+    if input_list:
+        for i in range(half_way):
+            orig_n = input_list[i]
+            switch_n = input_list[(i + 1) * -1]
+            input_list[i] = switch_n
+            input_list[(i + 1) * -1] = orig_n
+
 
 
 def custom_contains(input_list, value):
