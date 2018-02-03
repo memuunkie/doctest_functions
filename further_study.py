@@ -29,9 +29,21 @@ def custom_len(input_list):
         >>> custom_len(['Do', 'Re', 'Mi', 'Fa', 'So', 'La', 'Ti', 'Do'])
         8
 
-    """
+        >>> custom_len([])
+        0
 
-    return 0
+    """
+    count = 0
+
+    if input_list:
+
+        for item in input_list:
+            count += 1
+
+        return count
+
+
+    return count
 
 
 # For the next four exercises, you'll need to be clever and think about ways
@@ -58,12 +70,14 @@ def custom_append(input_list, value):
         True
 
     """
+    list_len = custom_len(input_list)
 
-    pass
+    input_list[list_len:list_len] = [value]
+
 
 
 def custom_extend(input_list, second_list):
-    """Append every item in second_list to input_list.
+    """Append every itemst in second_list to input_list.
 
     Like input_list.extend(second_list), custom_extend(input_list, second_list)
     should append every item in the second list to the end of the first list
@@ -77,8 +91,9 @@ def custom_extend(input_list, second_list):
         True
 
     """
+    list_len = custom_len(input_list)
 
-    pass
+    input_list[list_len:list_len] = second_list
 
 
 def custom_insert(input_list, index, value):
